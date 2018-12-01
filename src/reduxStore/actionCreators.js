@@ -7,3 +7,8 @@ export const fetch = () => ({
 export const cancelFetch = () => ({
   type: C.CANCEL_FETCH
 });
+
+export const setOverViewData = ( data = {}) => ({
+  type: C.SET_OVERVIEW_DATA,
+  payload: data
+});

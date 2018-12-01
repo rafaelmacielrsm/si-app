@@ -78,6 +78,8 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize',
     ...fluidFontSize( 24, 32 ),
 
+    transition: 'all .2s ease-in-out',
+
     ':hover': {
       backgroundColor: colorPallete.secondaryDarkColor,
       color: colorPallete.secondaryTextColor,

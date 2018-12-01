@@ -22,11 +22,10 @@ class Navigator extends React.PureComponent {
           )
           : (
             <div 
-              class="button button-clear" 
               className={ css( styles.link )} 
               onClick={() => this.setState({ isOpen: ! this.state.isOpen })}>
 
-              <i class="material-icons">
+              <i className="material-icons">
                   menu
               </i>
             </div>

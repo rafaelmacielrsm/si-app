@@ -6,7 +6,7 @@ class Loader extends React.Component {
     return (
       <div className={ css( styles.container )} >
         <svg 
-          class={css( styles.svgLoader )} 
+          className={css( styles.svgLoader )} 
           viewBox="0 0 128 128" 
           xmlns="http://www.w3.org/2000/svg">
 

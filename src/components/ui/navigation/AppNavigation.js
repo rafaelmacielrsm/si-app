@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Albums from '../../presentational/Albums';
 import Artists from '../../presentational/Artists';
 import Genres from '../../presentational/Genres';
-import Home from '../../presentational/Home';
+import Home from '../../container/HomeContainer';
 import Tracks from '../../presentational/Tracks';
 import Navigator from './Navigator';
 import { FluidCssRule } from '../../../assets/css-utils';
@@ -30,8 +30,8 @@ class AppNavigation extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     ...FluidCssRule( 24, 32, 'paddingTop' ),
-    flexDirection: 'column',
-    flexGrow: 1
+    height: '100vh',
+    width: '100vw',
   },
 });
 

@@ -1,3 +1,9 @@
 {
-  "isFetching" : false
+  "isFetching" : false,
+  "overviewData": {
+    "artists": "",
+    "albums": "",
+    "genres": "",
+    "tracks": ""
+  }
 }
