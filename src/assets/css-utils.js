@@ -49,7 +49,7 @@ export const FluidCssRule = ( min, max, rule ) => ({
 
 export const defaultGradient = (
   `linear-gradient(to right, \
-    ${colorPallete.secondaryColor}, ${colorPallete.primaryLightColor})`
+    ${colorPallete.primaryLightColor}, ${colorPallete.secondaryColor})`
 );
 
 export const defaultBtnStyle = ({

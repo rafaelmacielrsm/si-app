@@ -40,7 +40,7 @@ class TableControls extends React.PureComponent {
                     key={opt} 
                     value={`${opt}`}>
 
-                    {`Page ${opt+1}`}
+                    {`P ${opt+1}`}
                   </option>
                 ))
             }

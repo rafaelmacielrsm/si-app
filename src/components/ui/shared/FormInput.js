@@ -47,11 +47,9 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    height: '64',
-
     color: 'white !important',
 
-    ...fluidFontSize( 24, 32 ),
+    ...fluidFontSize( 16, 24 ),
     
     ':focus':{
       borderColor: 'white',
@@ -63,7 +61,7 @@ FormImput.propTypes = {
   fieldName: PropTypes.string.isRequired,
   errorMessage: PropTypes.string,
   onChangeCB: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.any.isRequired,
 };
 
 export default FormImput;

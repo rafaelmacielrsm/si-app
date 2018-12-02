@@ -5,7 +5,7 @@ import Albums from '../../presentational/Albums';
 import Artists from '../../container/ArtistContainer';
 import Genres from '../../container/GenreContainer';
 import Home from '../../container/HomeContainer';
-import Tracks from '../../presentational/Tracks';
+import Tracks from '../../container/TrackContainer';
 import Navigator from './Navigator';
 import Messages from '../shared/Messages';
 import { FluidCssRule } from '../../../assets/css-utils';

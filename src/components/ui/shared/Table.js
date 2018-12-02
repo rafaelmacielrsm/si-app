@@ -8,7 +8,6 @@ export const TableHoC = ( TableItem ) => {
   return class Table extends React.PureComponent {
     render() {
       const { dataset, selectionHandler } = this.props;
-
       return (
         <div className={ css( styles.table )} >
           <section className={ css( styles.listContainer )} >
@@ -18,7 +17,7 @@ export const TableHoC = ( TableItem ) => {
                   record={record}
                   key={index}
                   selectionHandler={() => {
-                    selectionHandler({ id: record.id, name: record.name }) ;
+                    selectionHandler( record ) ;
                   }} />
               ))
             }

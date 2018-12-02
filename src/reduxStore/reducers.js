@@ -82,10 +82,34 @@ const artists = ( state = [], action ) => {
   }
 };
 
+const tracks = ( state = [], action ) => {
+  switch ( action.type ) {
+  case C.SET_TRACK_DATA:
+    return action.payload;
+
+  case C.ADD_TRACK_DATA:
+    return [ ...state, action.payload ];
+
+  case C.REMOVE_TRACK_DATA:
+    return state.filter( track => track.id !== action.payload );
+
+  case C.UPDATE_TRACK_DATA:
+    return state.map( track => (
+      track.id === action.payload.id
+        ? action.payload
+        : track
+    ));
+
+  default:
+    return state;
+  }
+};
+
 export default combineReducers({
   isFetching,
   overviewData,
   message,
   genres,
-  artists
+  artists,
+  tracks
 });
