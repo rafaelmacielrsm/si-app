@@ -56,9 +56,30 @@ const genres = ( state = [], action ) => {
   }
 };
 
+const artists = ( state = [], action ) => {
+  switch ( action.type ) {
+  case C.SET_ARTIST_DATA:
+    return action.payload;
+
+  case C.REMOVE_ARTIST_DATA:
+    return state.filter( artist => artist.id !== action.payload );
+
+  case C.UPDATE_ARTIST_DATA:
+    return state.map( artist => (
+      artist.id === action.payload.id
+        ? action.payload
+        : artist
+    ));
+
+  default:
+    return state;
+  }
+};
+
 export default combineReducers({
   isFetching,
   overviewData,
+  message,
   genres,
-  message
+  artists
 });

@@ -82,7 +82,7 @@ export const updateGenreData = ( id, data ) => {
   return updateResource( RESOURCES.GENRE, id, data );
 };
 
-export const newGenre = ( id, data ) => {
+export const newGenre = ( data ) => {
   return newResource( RESOURCES.GENRE, data );
 };
 
