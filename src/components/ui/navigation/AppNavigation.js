@@ -3,10 +3,11 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Albums from '../../presentational/Albums';
 import Artists from '../../presentational/Artists';
-import Genres from '../../presentational/Genres';
+import Genres from '../../container/GenreContainer';
 import Home from '../../container/HomeContainer';
 import Tracks from '../../presentational/Tracks';
 import Navigator from './Navigator';
+import Messages from '../shared/Messages';
 import { FluidCssRule } from '../../../assets/css-utils';
 
 class AppNavigation extends React.PureComponent {
@@ -15,6 +16,7 @@ class AppNavigation extends React.PureComponent {
       <Router>
         <div className={ css( styles.container )} >
           <Navigator />
+          <Messages />
 
           <Route exact path="/" component={Home} />
           <Route path="/artists" component={Artists} />
@@ -29,7 +31,7 @@ class AppNavigation extends React.PureComponent {
 
 const styles = StyleSheet.create({
   container: {
-    ...FluidCssRule( 24, 32, 'paddingTop' ),
+    ...FluidCssRule( 34, 48, 'paddingTop' ),
     height: '100vh',
     width: '100vw',
   },

@@ -41,10 +41,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden',
-    position: 'absolute',
+    position: 'fixed',
     top: 0,
     width: '100%',  
     boxShadow: `4px 0px 8px ${colorPallete.primaryDarkColor}`,
+    zIndex: 10,
   },
 
   link: {

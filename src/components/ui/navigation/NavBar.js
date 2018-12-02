@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     height: '100vh',
-    backgroundColor: 'rgba(0, 0, 0, .5)',
+    backgroundColor: 'rgba(255, 255, 255, .75)',
   },
 
   links: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     outline: 'none',
     display: 'block',
     color: colorPallete.primaryTextColor,
-    backgroundColor: colorPallete.primaryColor,
+    backgroundColor: colorPallete.primaryDarkColor,
     textAlign: 'center',
     textTransform: 'capitalize',
     ...fluidFontSize( 24, 32 ),

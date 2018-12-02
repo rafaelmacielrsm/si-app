@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
+import { colorPallete } from '../../../assets/css-utils';
 
 class Loader extends React.Component {
   render() {
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   },
 
   equilizerPath: {
-    stroke: 'red',
+    stroke: colorPallete.alert,
     strokeWidth: 16,
     strokeLinecap: 'butt',
     strokeDasharray: 128,

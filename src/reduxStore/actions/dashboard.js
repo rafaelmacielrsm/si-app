@@ -68,5 +68,6 @@ const countAllData = () => ( dispatch ) => {
 };
 
 export {
-  countAllData
+  countAllData,
+  countGenres,
 };
