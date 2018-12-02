@@ -17,12 +17,13 @@ const urlBuilder = ( resource, options ) => {
 
     if( options.top ) baseUrl += `$top=${options.top}`;
     if( options.top ) baseUrl += `&$skip=${options.skip}`;
+    if( options.inlineCount ) baseUrl += '&$inlinecount=allpages';
 
     return baseUrl;
   }
 };
 
-const getResource = ( resource, options = {}) => {
+export const getResource = ( resource, options = {}) => {
   return fetch(
     urlBuilder( resource, options ),
     {
@@ -31,7 +32,7 @@ const getResource = ( resource, options = {}) => {
   );
 };
 
-const updateResource = ( resource, id, data ) => {
+export const updateResource = ( resource, id, data ) => {
   return fetch(
     `${serverURL}/${resource}(${id})`,
     {
@@ -44,7 +45,7 @@ const updateResource = ( resource, id, data ) => {
   );
 };
 
-const newResource = ( resource, data ) => {
+export const newResource = ( resource, data ) => {
   return fetch(
     `${serverURL}/${resource}`,
     {
@@ -57,7 +58,7 @@ const newResource = ( resource, data ) => {
   );
 };
 
-const deleteResource = ( resource, id ) => {
+export const deleteResource = ( resource, id ) => {
   return fetch(
     `${serverURL}/${resource}(${id})`,
     {

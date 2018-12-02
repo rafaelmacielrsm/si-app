@@ -4,7 +4,7 @@ import { colorPallete, defaultBtnStyle } from '../../../assets/css-utils';
 import FormInput from '../../ui/shared/FormInput';
 import PropTypes from 'prop-types';
 
-class GenreForm extends React.PureComponent {
+class ArtistForm extends React.PureComponent {
   constructor( props ) {
     super( props );
 
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   }
 });
 
-GenreForm.propTypes = {
+ArtistForm.propTypes = {
   isVisible: PropTypes.bool.isRequired,
   instance: PropTypes.shape({
     name: PropTypes.string,
@@ -143,4 +143,4 @@ GenreForm.propTypes = {
   submitDataHandler: PropTypes.func.isRequired
 };
 
-export default GenreForm;
+export default ArtistForm;

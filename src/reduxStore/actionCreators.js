@@ -28,6 +28,11 @@ export const removeGenre = ( id ) => ({
   payload: id
 });
 
+export const addGenre = ( data ) => ({
+  type: C.ADD_GENRE_DATA,
+  payload: data
+});
+
 export const setMessage = ( message = '' ) => ({
   type: C.SET_MESSAGE,
   payload: message

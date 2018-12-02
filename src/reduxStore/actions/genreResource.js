@@ -3,6 +3,7 @@ import {
   fetch, 
   removeGenre,
   updateGenre,
+  addGenre,
   cancelFetch } from '../actionCreators';
 import { 
   getGenreData, 
@@ -64,7 +65,11 @@ export const newRecord = ( data ) => ( dispatch, getState ) => {
       if( response.status === 201 ) {
         response.json()
           .then( data => {
-            console.log( data );
+            console.log( getState().genres );
+            if( getState().genres.length < 10 ){
+              let record = { id: data.Id, name: data.Name };
+              dispatch( addGenre( record ));
+            }
             
             dispatch( countGenres());
             dispatch( showMessage( 'Created Successfully' ));

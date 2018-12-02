@@ -41,6 +41,9 @@ const genres = ( state = [], action ) => {
   case C.SET_GENRE_DATA:
     return action.payload;
 
+  case C.ADD_GENRE_DATA:
+    return [ ...state, action.payload ];
+
   case C.REMOVE_GENRE_DATA:
     return state.filter( genre => genre.id !== action.payload );
 
@@ -60,6 +63,9 @@ const artists = ( state = [], action ) => {
   switch ( action.type ) {
   case C.SET_ARTIST_DATA:
     return action.payload;
+
+  case C.ADD_ARTIST_DATA:
+    return [ ...state, action.payload ];
 
   case C.REMOVE_ARTIST_DATA:
     return state.filter( artist => artist.id !== action.payload );

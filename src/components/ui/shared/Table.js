@@ -3,30 +3,31 @@ import { StyleSheet, css } from 'aphrodite/no-important';
 import PropTypes from 'prop-types';
 import { colorPallete, fluidFontSize } from '../../../assets/css-utils';
 
-class Table extends React.PureComponent {
-  render() {
-    const { dataset, selectionHandler } = this.props;
 
-    return (
-      <div className={ css( styles.table )} >
-        <section className={ css( styles.listContainer )} >
-          {
-            dataset.map(( record, index ) => (
-              <div 
-                key={index}
-                className={ css( styles.card )} 
-                onClick={() => {
-                  selectionHandler({ id: record.id, name: record.name }) ;
-                }} >
-                <span>{record.name}</span>
-              </div>
-            ))
-          }
-        </section>
-      </div>
-    );
-  }
-}
+export const TableHoC = ( TableItem ) => {
+  return class Table extends React.PureComponent {
+    render() {
+      const { dataset, selectionHandler } = this.props;
+
+      return (
+        <div className={ css( styles.table )} >
+          <section className={ css( styles.listContainer )} >
+            {
+              dataset.map(( record, index ) => (
+                <TableItem 
+                  record={record}
+                  key={index}
+                  selectionHandler={() => {
+                    selectionHandler({ id: record.id, name: record.name }) ;
+                  }} />
+              ))
+            }
+          </section>
+        </div>
+      );
+    }
+  };
+};
 
 const styles = StyleSheet.create({
   table: {
@@ -80,9 +81,8 @@ const styles = StyleSheet.create({
   }
 });
 
-Table.propTypes = {
+TableHoC.propTypes = {
   dataset: PropTypes.array,
-  selectionHandler: PropTypes.func.isRequired
+  selectionHandler: PropTypes.func.isRequired,
+  TableItem: PropTypes.node,
 };
-
-export default Table;
