@@ -82,6 +82,29 @@ const artists = ( state = [], action ) => {
   }
 };
 
+const albums = ( state = [], action ) => {
+  switch ( action.type ) {
+  case C.SET_ALBUM_DATA:
+    return action.payload;
+
+  case C.ADD_ALBUM_DATA:
+    return [ ...state, action.payload ];
+
+  case C.REMOVE_ALBUM_DATA:
+    return state.filter( album => album.id !== action.payload );
+
+  case C.UPDATE_ALBUM_DATA:
+    return state.map( album => (
+      album.id === action.payload.id
+        ? action.payload
+        : album
+    ));
+
+  default:
+    return state;
+  }
+};
+
 const tracks = ( state = [], action ) => {
   switch ( action.type ) {
   case C.SET_TRACK_DATA:
