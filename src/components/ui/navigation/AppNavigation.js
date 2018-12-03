@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Albums from '../../presentational/Albums';
+import Albums from '../../container/AlbumContainer';
 import Artists from '../../container/ArtistContainer';
 import Genres from '../../container/GenreContainer';
 import Home from '../../container/HomeContainer';

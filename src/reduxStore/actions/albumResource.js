@@ -52,13 +52,13 @@ export const updateRecord = ( id, data ) => ( dispatch, getState ) => {
       if( response.status === 200 ) {
         response.json()
           .then( data => {
-            let track = { 
+            let updatedRecord = { 
               id: data.Id, 
               name: data.Name, 
               artist: data[ 'Artist@xdata.ref' ],
             };
       
-            dispatch( updateResource( track ));
+            dispatch( updateResource( updatedRecord ));
             dispatch( showMessage( 'Update Successful' ));
             dispatch( cancelFetch());
           });
@@ -81,13 +81,13 @@ export const newRecord = ( data ) => ( dispatch, getState ) => {
       if( response.status === 201 ) {
         response.json()
           .then( data => {
-            if( getState().tracks.length < 10 ){
-              let track = { 
+            if( getState()[ RESOURCE.redux ].length < 10 ){
+              let newRecord = { 
                 id: data.Id, 
                 name: data.Name, 
                 artist: data[ 'Artist@xdata.ref' ],
               };
-              dispatch( addResource( track ));
+              dispatch( addResource( newRecord ));
             }
             
             dispatch( countRecords());

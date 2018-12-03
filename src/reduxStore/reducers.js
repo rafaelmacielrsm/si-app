@@ -134,5 +134,6 @@ export default combineReducers({
   message,
   genres,
   artists,
-  tracks
+  tracks,
+  albums,
 });

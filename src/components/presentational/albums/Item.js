@@ -4,8 +4,9 @@ import {
   colorPallete, 
   fluidFontSize, 
   defaultGradient } from '../../../assets/css-utils';
+import { connect } from 'react-redux';
 
-const Item = ({ index, record, selectionHandler }) => {
+const Item = ({ index, record, selectionHandler, artists }) => {
   return(
     <section 
       key={index}
@@ -16,7 +17,7 @@ const Item = ({ index, record, selectionHandler }) => {
 
       <section className={ css( styles.field )} >
         <h4 className={ css( styles.label )}>
-          Song Name
+          Album Name
         </h4>
         <div className={ css( styles.fieldValue )} >
           {record.name}
@@ -25,23 +26,26 @@ const Item = ({ index, record, selectionHandler }) => {
 
       <section className={ css( styles.field )} >
         <h4 className={ css( styles.label )}>
-          Song Writer(s)
+          Artist
         </h4>
         <div className={ css( styles.fieldValue )} >
-          {record.composer}
-        </div>
-      </section>
-
-      <section className={ css( styles.field )} >
-        <h4 className={ css( styles.label )}>
-          Track length
-        </h4>
-        <div className={ css( styles.fieldValue )} >
-          {`${Math.round( record.milliseconds / 1000 )} seconds`}
+          {_pickArtistname( record.artist, artists )}
         </div>
       </section>
     </section>
   );
+};
+
+const _pickArtistname = ( artistId, artists ) => {
+  if( artistId ){
+    let id = artistId.replace( /\D/g, '' );
+
+    let val = artists.find( element => element.id === Number.parseInt( id ));
+
+    return val ? val.name : '';
+  }
+
+  return '';
 };
 
 const styles = StyleSheet.create({
@@ -99,5 +103,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Item;
+const mapStateToProps = ( state ) => ({
+  artists: state.artists
+});
+
+export default connect( mapStateToProps )( Item );
 
